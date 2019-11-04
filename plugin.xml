@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+ xmlns:android="http://schemas.android.com/apk/res/android" id="com.obfuscation.plugin" version="1.0.0">
+   
+   <name>Obfuscation Plugin</name>
+
+   <js-module name="ObfuscationPlugin" src="www/ObfuscationPlugin.js">
+      <clobbers target="cordova.plugins.ObfuscationPlugin" />
+   </js-module>
+
+   <!-- Android Platform -->
+   <platform name="android">
+      <config-file parent="/*" target="res/xml/config.xml">
+         <feature name="ObfuscationPlugin">
+            <param name="android-package" value="com.obfuscation.plugin.ObfuscationPlugin" />
+         </feature>
+      </config-file>
+      <config-file parent="/*" target="AndroidManifest.xml" />
+
+    <!-- Adding files and gradle configuration to ObfuscationPlugin -->
+    <source-file src="src/android/ObfuscationPlugin.java" target-dir="src/com/obfuscation/plugin" />
+    <framework custom="true" src="src/android/obfuscation.gradle" type="gradleReference" />
+    <resource-file src="src/android/proguard-rules-new.pro"target="proguard-rules-new.pro"/>
+   </platform>
+</plugin>

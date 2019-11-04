@@ -1,0 +1,17 @@
+{
+  "name": "com.obfuscation.plugin",
+  "version": "1.0.0",
+  "description": "Obfuscation Android Plugin",
+  "cordova": {
+    "id": "com.obfuscation.plugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Paulo Camilo",
+  "license": "ISC"
+}
